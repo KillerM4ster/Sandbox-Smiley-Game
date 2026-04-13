@@ -2,6 +2,11 @@ extends Node2D
 
 @onready var tilemap_solid: TileMapLayer = $TilemapSolid
 @onready var tilemap_solid_shadow: TileMapLayer = $TilemapSolidShadow
+@onready var player: CharacterBody2D = $Player
+
+
+func _init() -> void:
+	Global.game = self
 
 
 func _ready() -> void:

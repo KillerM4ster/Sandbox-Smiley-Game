@@ -12,6 +12,8 @@ extends CharacterBody2D
 	set(value):
 		no_clip = value
 		collision_shape_2d.disabled = value
+		if Global.ui:
+			Global.ui.update_no_clip_button()
 
 @export var collision_shape_2d: CollisionShape2D
 

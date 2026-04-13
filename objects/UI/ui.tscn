@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dt3dlrkddbhfv"]
+
+[ext_resource type="Script" uid="uid://olnbf6xnoc1x" path="res://objects/UI/ui.gd" id="1_cd8bn"]
+[ext_resource type="Texture2D" uid="uid://bln2xif271k8h" path="res://objects/UI/textures/icons/no_clip.png" id="1_kcsmh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kcsmh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cd8bn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_giqs2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_walwe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b68ph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyecd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2h1fp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7cjpn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv63r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kblxk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uasvl"]
+
+[node name="UI" type="Control" unique_id=396622032]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cd8bn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=299786868]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9764706, 0.83137256, 0.90588236, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=106554840]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TilebarBackground" type="Panel" parent="MarginContainer" unique_id=1294486762]
+custom_minimum_size = Vector2(202, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="ActionbarBackground" type="Panel" parent="MarginContainer" unique_id=1326735903]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ActionbarBackground" unique_id=1912588097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ActionbarBackground/MarginContainer" unique_id=1649511557]
+layout_mode = 2
+
+[node name="NoClip" type="Control" parent="MarginContainer/ActionbarBackground/MarginContainer/HBoxContainer" unique_id=1834378737]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ActionbarBackground/MarginContainer/HBoxContainer/NoClip" unique_id=1577175451]
+modulate = Color(1, 1, 1, 0.5019608)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kcsmh")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="BtnNoClip" type="Button" parent="MarginContainer/ActionbarBackground/MarginContainer/HBoxContainer/NoClip" unique_id=1416483088]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kcsmh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_cd8bn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_giqs2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_walwe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b68ph")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyecd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2h1fp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7cjpn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv63r")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kblxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uasvl")
+
+[connection signal="pressed" from="MarginContainer/ActionbarBackground/MarginContainer/HBoxContainer/NoClip/BtnNoClip" to="." method="_on_btn_no_clip_pressed"]
