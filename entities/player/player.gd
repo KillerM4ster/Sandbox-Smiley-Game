@@ -52,6 +52,16 @@ func _no_clip_update(_delta: float) -> void:
 func _no_clip_physics_update(delta: float) -> void:
 	var direction := Input.get_vector("LEFT", "RIGHT", "UP", "DOWN")
 	
+	if abs(direction.x) > 0.5:
+		direction.x = sign(direction.x)
+	else:
+		direction.x = 0.0
+		
+	if abs(direction.y) > 0.5:
+		direction.y = sign(direction.y)
+	else:
+		direction.y = 0.0
+	
 	if direction == Vector2.ZERO:
 		velocity = lerp(velocity, Vector2.ZERO, friction * delta)
 	else:
@@ -66,6 +76,11 @@ func _platform_update(_delta: float) -> void:
 
 func _platform_physics_update(delta: float) -> void:
 	var direction := Input.get_axis("LEFT", "RIGHT")
+	
+	if abs(direction) > 0.5:
+		direction = sign(direction)
+	else:
+		direction = 0.0
 	
 	if direction == 0:
 		velocity.x = lerp(velocity.x, 0.0, friction * delta)
