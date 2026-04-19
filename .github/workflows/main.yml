@@ -40,7 +40,7 @@ jobs:
     - name: Setup Pages
       uses: actions/configure-pages@v4
       
-    - name: Move Nightly Folder
+    - name: Move Nightly Folder
       run: |
         mkdir -p gh-pages/play/nightly/
         mv /home/runner/.local/share/godot/builds/Web/* gh-pages/play/nightly/
